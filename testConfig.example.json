@@ -1,0 +1,8 @@
+{
+  "specification": "",
+  "carrier_id": 1659,
+  "display_name": "Orange PL",
+  "setup_mechanisms": [0],
+  "service_provider_names": ["Orange", "Orange PL", "Orange eSIM"],
+  "mccmnc_tuples": ["26003"]
+}

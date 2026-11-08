@@ -1,0 +1,57 @@
+name: Works / doesn't work report
+description: Share your result so others know which setups work
+title: "[Report] <watch> / <country> / <carrier>"
+labels: ["report"]
+body:
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - eSIM added and LTE works
+        - eSIM added, but calls/SMS don't work
+        - QR option shown, but profile install failed
+        - Mobile network page still blank
+    validations:
+      required: true
+  - type: input
+    id: watch
+    attributes:
+      label: Watch model
+      placeholder: Pixel Watch 5 LTE
+    validations:
+      required: true
+  - type: input
+    id: phone
+    attributes:
+      label: Phone and Android version
+      placeholder: Pixel 9 Pro, Android 17
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: Companion app build used for setup
+      placeholder: 1.1.0.525084124
+    validations:
+      required: true
+  - type: input
+    id: carrier
+    attributes:
+      label: Country / carrier / tariff
+      placeholder: Poland / Orange / Orange Flex
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: testConfig.json used
+      render: json
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant logcat lines
+      description: |
+        Output of `grep -E "Esim\.(Device|Test)" pw.log | cut -c1-250`.
+        Remove EID, IMEI and ICCID values before posting.
+      render: text
